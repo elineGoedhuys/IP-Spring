@@ -22,6 +22,7 @@
         <li><a href="<c:url value="/patients.htm" />">Patients</a></li>
         <li><a href="<c:url value="/doctors.htm" />">Doctors</a></li>
         <li><a href="<c:url value="/makeAppointment.htm" />">Make appointment</a></li>
+        <li><a href="<c:url value="/findAppointment.htm" />">Find appointment</a></li>
     </ul>
 </nav>
     </body>

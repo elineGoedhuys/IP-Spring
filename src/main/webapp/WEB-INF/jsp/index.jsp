@@ -12,6 +12,6 @@
     <body>
         <%@include file="header.jsp"%>
         <h1>Welcome to our hospital</h1>
-        <p></p>
+        
     </body>
 </html>

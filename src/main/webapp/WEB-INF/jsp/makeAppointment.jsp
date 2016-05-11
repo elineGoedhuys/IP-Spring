@@ -20,6 +20,8 @@
   <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-timepicker.js"></script>
         <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="wickedpicker.js"></script>
   
   <script>
   $(document).ready(function() {
@@ -28,13 +30,7 @@
  
   </script>
   
-   <script type="text/javascript">
-            $('#timepicker5').timepicker({
-                template: false,
-                showInputs: false,
-                minuteStep: 5
-            });
-        </script>
+ 
         
     </head>
     <body>
@@ -42,10 +38,7 @@
         <h1>Make new appointment</h1>
         <form:form modelAttribute="makeAppointment" method="POST" action="${pageContext.request.contextPath}/makeAppointment.htm">
             <table>
-                <tr>
-                    <td><form:label path="appointmentId">Appointment ID</form:label></td>
-                    <td><form:input path="appointmentId" value="${appointment.appointmentId}"/></td>
-                </tr>
+                
                 <tr>
                     <td><form:label path="doctorId">Doctor ID</form:label></td>
                     <td><form:input path="doctorId" value="${appointment.doctorId}"/></td>
@@ -59,8 +52,8 @@
                     <td><form:input id="datepicker" path="date" value="${appointment.date}"/></td>
                 </tr>
                 <tr>
-                    <td><form:label path="hour">Hour</form:label></td>
-                    <td><form:input id="timepicker5" path="hour" value="${appointment.hour}"/></td>
+                    <td><form:label path="uur"  >Hour</form:label></td>
+                    <td><form:input path="uur" value="${appointment.uur}"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="place">Place</form:label></td>

@@ -36,7 +36,7 @@
                  
                     <td><c:url value= '${doctor.firstName}' /></td>
                     <td><c:url value= '${doctor.lastName}' /></td>
-                    <td><c:url value= '${doctor.doctorId}' /></td>
+                    <td><c:url value= '${doctor.id}' /></td>
                     <td><c:url value= '${doctor.age}' /></td>
                     <td><c:url value= '${doctor.address.street}' /></td>
                     <td><c:url value= '${doctor.address.houseNumber}' /></td>
@@ -45,7 +45,7 @@
                     <td><c:url value= '${doctor.address.region}' /></td>
                     <td><c:url value= '${doctor.address.country}' /></td>
                     <td><c:url value= '${doctor.passportId}' /></td>
-                    <td><a href="<c:url value="doctors/${doctor.doctorId}.htm"/>"></a><img src="${pageContext.request.contextPath}/images/edit_button.png" class="edit" alt="Edit_Button"></td>
+                    <td><a href="<c:url value="doctors/${doctor.id}.htm"/>"></a><img src="${pageContext.request.contextPath}/images/edit_button.png" class="edit" alt="Edit_Button"></td>
                     
                 </tr>
                 </c:forEach>

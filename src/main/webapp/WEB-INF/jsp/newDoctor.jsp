@@ -60,10 +60,10 @@
                         <td><form:label path="address.country">Country</form:label></td>
                         <td><form:input path="address.country" value="${doctor.address.country}"/></td>
                     </tr>
-                    <tr>
+                    <%--<tr>
                         <td><form:label path="doctorId">Doctor ID</form:label></td>
                         <td><form:input path="doctorId" value="${doctor.doctorId}"/></td>
-                    </tr>
+                    </tr>--%>
                     <tr>
                     <td class="save" colspan="2">
                          <input type="submit" value="Save"/>

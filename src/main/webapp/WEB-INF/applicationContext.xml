@@ -14,39 +14,12 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="com.howtodoinjava.demo" />
+    
  
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+    
+ 
      
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
-    </bean>
-     
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="messages" />
-    </bean>
-     
-    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-        <property name="defaultLocale" value="en" />
-    </bean>
-  
-    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-        <property name="paramName" value="lang" />
-    </bean>
-     
-    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
-        <property name="interceptors">
-            <list>
-                <ref bean="localeChangeInterceptor" />
-            </list>
-        </property>
-    </bean>
-     
-    <bean id="service" class="service.DatabaseFacade">
-        <constructor-arg>
-            <value></value>
-        </constructor-arg>  
+    <bean id="service" class="service.DatabaseFacade" destroy-method = "close">   
     </bean>
     
     

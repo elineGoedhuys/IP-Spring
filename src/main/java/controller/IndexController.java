@@ -5,38 +5,35 @@
  */
 package controller;
 
-
-import domain.Appointment1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
+import rest.Elevation;
 import service.DatabaseFacade;
 
 /**
  *
  * @author Eline
  */
+
+    
 @Controller
-@RequestMapping(value="/makeAppointment")
-public class makeAppointment {
+@RequestMapping(value="/index")
+public class IndexController {
     
     @Autowired
     private DatabaseFacade service;
     
-    
-   
-    
     @RequestMapping(method= RequestMethod.GET)
     public ModelAndView makeAppointment(){
-        return new ModelAndView("makeAppointment","makeAppointment",new Appointment1());
+        RestTemplate restTemplate = new RestTemplate();
+        Elevation response = restTemplate.getForObject("http://api.apixu.com/v1/current.json?key=aebe5a3f024040ff9bf112640160705&q=Paris", Elevation.class);
+        return new ModelAndView("index","rest", response.getResult().get(0).toString());
     }
     
-     @RequestMapping(method= RequestMethod.POST)
-    public String save(@ModelAttribute("makeAppointment") Appointment1 appointment){
-        service.makeAppointment(appointment);
-        return "redirect:/makeAppointment.htm";
-    }
 }
+
