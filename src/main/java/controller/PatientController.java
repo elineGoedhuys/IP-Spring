@@ -44,13 +44,17 @@ public class PatientController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String save(@ModelAttribute("patient") Patient patient) {
+    public String save(@ModelAttribute("patient") Patient patient, BindingResult result) {
+        if(result.hasErrors()){
+            return "newPatient";
+        }else{
         if (patient.getId() > 0) {
             service.updatePatient(patient);
         } else {
             service.newPatient(patient);
         }
         return "redirect:/patients.htm";
+        }
     }
 
     @RequestMapping(value = "/{patientId}", method = RequestMethod.GET)
