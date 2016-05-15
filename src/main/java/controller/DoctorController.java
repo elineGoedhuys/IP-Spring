@@ -48,7 +48,7 @@ public class DoctorController {
     }
     
     @RequestMapping(value="/{doctorId}", method= RequestMethod.GET)
-    public ModelAndView getEditForm(@PathVariable int doctorId){
+    public ModelAndView getEditForm(@PathVariable long doctorId){
         return new ModelAndView("newDoctor","doctor",service.getDoctorOnId(doctorId));
     }
     
