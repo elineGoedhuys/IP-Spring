@@ -22,6 +22,5 @@
     <bean id="service" class="service.DatabaseFacade" destroy-method = "close">   
     </bean>
     
-    
-
+  
 </beans>

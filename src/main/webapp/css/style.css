@@ -154,3 +154,19 @@ label{
     margin-right: 45%;
 }
 
+p a{
+    font-size: 14px;
+    font-family: 'Helvetica','Verdana',sans-serif;
+    text-align: left;
+    text-decoration: none;
+    color: #00356B;
+    margin-left: 15%;
+}
+
+.footer{
+    text-align: center;
+    border-style: solid none none none;
+    border-color: #C5EAF9;
+    margin-top: 5%;
+    
+}

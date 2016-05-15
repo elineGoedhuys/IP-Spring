@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
         
-        <title>Patients overview</title>
+        <title><spring:message code="lbl.page"/></title>
     </head>
     <body>
         <%@include file="header.jsp"%>
@@ -48,7 +48,7 @@
                     <td><c:url value= '${patient.address.country}' /></td>
                     <td><c:url value= '${patient.passportId}' /></td>
                     <td><a href="<c:url value="patients/${patient.id}.htm"/>"></a><img src="${pageContext.request.contextPath}/images/edit_button.png" class="edit" alt="Edit_Button"></td>
-                    
+                    <td><a href="<c:url value="patients/delete/${patient.id}.htm"/>"></a><img src="${pageContext.request.contextPath}/images/cross.png" class="edit" alt="Remove_Button"></td>
                 </tr>
                 </c:forEach>
             </table>
@@ -57,5 +57,6 @@
                 <input type="submit" value="Add new patient" />
             </form:form>
         </div>
+                <%@include file="footer.jsp"%>
     </body>
 </html>

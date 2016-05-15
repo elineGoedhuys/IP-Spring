@@ -31,7 +31,10 @@ public class makeAppointment {
     
     @RequestMapping(method= RequestMethod.GET)
     public ModelAndView makeAppointment(){
-        return new ModelAndView("makeAppointment","makeAppointment",new Appointment1());
+        ModelAndView modelAndView = new ModelAndView ("makeAppointment","makeAppointment",new Appointment1());
+        modelAndView.addObject("patients", service.getPatients());
+        modelAndView.addObject("doctors", service.getDoctors());
+        return modelAndView;
     }
     
      @RequestMapping(method= RequestMethod.POST)

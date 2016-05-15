@@ -16,12 +16,10 @@ import rest.Result;
  * @author Eline
  */
 public class TestRest {
-    
-     public static void main(String[] args){
+    public static void main(String[] args){
         RestTemplate restTemplate = new RestTemplate();
-        Elevation response = restTemplate.getForObject("http://api.apixu.com/v1/current.json?key=aebe5a3f024040ff9bf112640160705&q=Paris", Elevation.class);
-       
+        String response = restTemplate.getForObject("https://maps.googleapis.com/maps/api/elevation/json?locations=40.714728,-73.998672", String.class);
         System.out.println("Elevation: " + response);
     }
-    }
+}
 

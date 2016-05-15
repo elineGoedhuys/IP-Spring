@@ -41,7 +41,7 @@
                 <th>Place</th>
                     <c:forEach var="appointment" items="${appointments}">
                     <tr>
-                        <td><c:url value= '${appointment.appointmentId}' /></td>
+                        <td><c:url value= '${appointment.id}' /></td>
                         <td><c:url value= '${appointment.patientId}' /></td>
                         <td><c:url value= '${appointment.doctorId}' /></td>
                         <td><c:url value= '${appointment.date}' /></td>
@@ -51,5 +51,6 @@
                 </c:forEach>
             </table>
         </div>
+             <%@include file="footer.jsp"%>
     </body>
 </html>

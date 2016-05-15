@@ -40,6 +40,9 @@ public class DoctorController {
     
      @RequestMapping(method= RequestMethod.POST)
     public String save(@ModelAttribute ("doctor") Doctor doctor){
+        if(doctor.getId() > 0){
+            service.updateDoctor(doctor);
+        }
         service.newDoctor(doctor);
         return "redirect:/doctors.htm";
     }
@@ -47,5 +50,11 @@ public class DoctorController {
     @RequestMapping(value="/{doctorId}", method= RequestMethod.GET)
     public ModelAndView getEditForm(@PathVariable int doctorId){
         return new ModelAndView("newDoctor","doctor",service.getDoctorOnId(doctorId));
+    }
+    
+    @RequestMapping(value="/delete/{doctorId}", method= RequestMethod.GET)
+    public String delete(@PathVariable("doctorId") long doctorId){
+        service.deleteDocotor(doctorId);
+        return "redirect:/doctors.htm";
     }
 }

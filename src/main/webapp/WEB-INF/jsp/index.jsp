@@ -6,12 +6,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
+        <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
         <title>Home</title>
     </head>
 
     <body>
         <%@include file="header.jsp"%>
-        <h1>Welcome to our hospital</h1>
-        
+        <h1><spring:message code="lbl.welcome" /></h1>
+         <%@include file="footer.jsp"%>
     </body>
 </html>

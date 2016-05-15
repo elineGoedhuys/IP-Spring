@@ -25,38 +25,42 @@ import service.DatabaseFacade;
  * @author Eline
  */
 @Controller
-@RequestMapping(value="/patients")
+@RequestMapping(value = "/patients")
 public class PatientController {
-    
+
     @Autowired
     private DatabaseFacade service;
-    
-    @RequestMapping(method= RequestMethod.GET)
-    public ModelAndView getPatients(){
-        System.out.println("controller.PatientController.getPatients()");
-        return new ModelAndView("patients","patients",service.getPatients());
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView getPatients() {
+        
+        return new ModelAndView("patients", "patients", service.getPatients());
     }
-    
-    @RequestMapping(value="/new", method = RequestMethod.GET)
-    public ModelAndView getNewPatientForm(){
-        System.out.println("controller.PatientController.getNewPatientForm()");
-        return new ModelAndView("newPatient","patient",new Patient());
+
+    @RequestMapping(value = "/new", method = RequestMethod.GET)
+    public ModelAndView getNewPatientForm() {
+
+        return new ModelAndView("newPatient", "patient", new Patient());
     }
-  
-    
-    @RequestMapping(method= RequestMethod.POST)
-    public String save(@ModelAttribute("patient") Patient patient){
-        if(service.getPatients().contains(patient)){
+
+    @RequestMapping(method = RequestMethod.POST)
+    public String save(@ModelAttribute("patient") Patient patient) {
+        if (patient.getId() > 0) {
             service.updatePatient(patient);
-        }else{
-        service.newPatient(patient);
+        } else {
+            service.newPatient(patient);
         }
         return "redirect:/patients.htm";
     }
-    
-    @RequestMapping(value="/{patientId}", method= RequestMethod.GET)
-    public ModelAndView getEditForm(@PathVariable int patientId){
-        return new ModelAndView("newPatient","patient",service.getPatientOnId(patientId));
+
+    @RequestMapping(value = "/{patientId}", method = RequestMethod.GET)
+    public ModelAndView getEditForm(@PathVariable int patientId) {
+        return new ModelAndView("newPatient", "patient", service.getPatientOnId(patientId));
     }
 
+   @RequestMapping(value = "/delete/{patientId}", method = RequestMethod.GET)
+    public String delete(@PathVariable("patientId") long patientId) {
+        service.deletePatient(patientId);
+        return "redirect:/patients.htm";
+    }
 }

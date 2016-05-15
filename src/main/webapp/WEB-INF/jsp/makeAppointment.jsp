@@ -40,12 +40,21 @@
             <table>
                 
                 <tr>
-                    <td><form:label path="doctorId">Doctor ID</form:label></td>
-                    <td><form:input path="doctorId" value="${appointment.doctorId}"/></td>
+                   <%--<td><form:label path="doctorId">Doctor ID</form:label></td>
+                    <td><form:input path="doctorId" value="${appointment.doctorId}"/></td>--%>
+                 <td><form:select id="slcDoctor" path="doctor"> 
+                           <form:option label="SELECT" value="${null}"/></td>
+                   <td> <form:options items="${doctors}" itemValue="id" itemLabel="doctor" /></td>
+                   </form:select>
                 </tr>
                 <tr>
-                    <td><form:label path="patientId">Patient ID</form:label></td>
-                    <td><form:input path="patientId" value="${appointment.patientId}"/></td>
+                   <%-- <td><form:label path="patientId">Patient ID</form:label></td>
+                    <td><form:input path="patientId" value="${appointment.patientId}"/></td>--%>
+                   <td><form:select id="slcPatient" path="patient"> 
+                            <form:option label="SELECT" value="${null}"/></td>
+                    <td> <form:options items="${patients}" itemValue="id" itemLabel="patient" /></td>
+                        </form:select>
+                   
                 </tr>
                 <tr>
                     <td><form:label path="date">Date</form:label></td>
@@ -53,7 +62,7 @@
                 </tr>
                 <tr>
                     <td><form:label path="uur"  >Hour</form:label></td>
-                    <td><form:input path="uur" value="${appointment.uur}"/></td>
+                    <td><form:input path="uur" type="time" value="${appointment.uur}"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="place">Place</form:label></td>
@@ -66,6 +75,7 @@
                  </tr>
             </table>
         </form:form>
+         <%@include file="footer.jsp"%>
     </body>
             
 </html>

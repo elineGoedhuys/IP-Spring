@@ -6,6 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,11 +19,11 @@
         <img src="${pageContext.request.contextPath}/images/NYcity1.png" alt="NYcity">
         <nav class="nav">
         <ul class="ul">
-        <li><a href="<c:url value="/index.htm" />">Home</a></li>
-        <li><a href="<c:url value="/patients.htm" />">Patients</a></li>
-        <li><a href="<c:url value="/doctors.htm" />">Doctors</a></li>
-        <li><a href="<c:url value="/makeAppointment.htm" />">Make appointment</a></li>
-        <li><a href="<c:url value="/findAppointment.htm" />">Find appointment</a></li>
+        <li><a href="<c:url value="/index.htm" />"><spring:message code="lbl.home" /> </a></li>
+        <li><a href="<c:url value="/patients.htm" />"><spring:message code="lbl.patients" /> </a></li>
+        <li><a href="<c:url value="/doctors.htm" />"><spring:message code="lbl.doctors" /> </a></li>
+        <li><a href="<c:url value="/makeAppointment.htm" />"><spring:message code="lbl.makeAppointment" /> </a></li>
+        <li><a href="<c:url value="/findAppointment.htm" />"><spring:message code="lbl.findAppointment" /> </a></li>
     </ul>
 </nav>
     </body>
