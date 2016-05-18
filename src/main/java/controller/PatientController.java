@@ -41,7 +41,7 @@ public class PatientController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("patient") Patient patient, BindingResult result) {
+    public String save(@ModelAttribute("patient") Patient patient, BindingResult result) {
         if(result.hasErrors()){
             return "newPatient";
         }else{

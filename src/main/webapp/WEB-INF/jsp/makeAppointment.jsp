@@ -44,7 +44,7 @@
                    <%-- <td><form:input path="doctorId" value="${appointment.doctorId}"/></td>--%>
                <td><form:select id="slcDoctor" path="doctor"> 
                            <form:option label="SELECT" value="${null}"/>
-                   <form:options items="${doctors}" itemValue="id" itemLabel="id" />
+                   <form:options items="${doctors}" itemValue="id" itemLabel="lastName" />
                    </form:select></td>
                 </tr>
                 <tr>
@@ -52,7 +52,7 @@
                    <%-- <td><form:input path="patientId" value="${appointment.patientId}"/></td>--%>
                    <td><form:select id="slcPatient" path="patient.id"> 
                             <form:option label="SELECT" value="${null}"/>
-                    <form:options items="${patients}" itemValue="id" itemLabel="id" />
+                    <form:options items="${patients}" itemValue="id" itemLabel="lastName" />
                    </form:select></td>
                    
                 </tr>
