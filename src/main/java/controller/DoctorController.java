@@ -8,8 +8,10 @@ package controller;
 import domain.Doctor;
 import domain.Patient;
 import java.util.ArrayList;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,12 +41,16 @@ public class DoctorController {
     }
     
      @RequestMapping(method= RequestMethod.POST)
-    public String save(@ModelAttribute ("doctor") Doctor doctor){
+    public String save(@Valid @ModelAttribute ("doctor") Doctor doctor, BindingResult result){
+        if(result.hasErrors()){
+            return "newDoctor";
+        }else{
         if(doctor.getId() > 0){
             service.updateDoctor(doctor);
         }
         service.newDoctor(doctor);
         return "redirect:/doctors.htm";
+        }
     }
     
     @RequestMapping(value="/{doctorId}", method= RequestMethod.GET)

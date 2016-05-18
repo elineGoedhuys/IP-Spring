@@ -20,7 +20,7 @@ public class PatientConverter implements Converter<String, Patient> {
     
     @Override
     public Patient convert(String id) {
-       return service.getPatientOnId(Integer.valueOf(id));
+       return service.getPatientOnId(Long.valueOf(id));
     }
     
     

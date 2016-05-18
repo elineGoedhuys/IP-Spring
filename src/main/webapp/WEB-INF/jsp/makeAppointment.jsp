@@ -40,20 +40,20 @@
             <table>
                 
                 <tr>
-                   <%--<td><form:label path="doctorId">Doctor ID</form:label></td>
-                    <td><form:input path="doctorId" value="${appointment.doctorId}"/></td>--%>
-                 <td><form:select id="slcDoctor" path="doctor"> 
-                           <form:option label="SELECT" value="${null}"/></td>
-                   <td> <form:options items="${doctors}" itemValue="id" itemLabel="doctor" /></td>
-                   </form:select>
+                   <td><form:label path="doctor">Doctor ID</form:label></td>
+                   <%-- <td><form:input path="doctorId" value="${appointment.doctorId}"/></td>--%>
+               <td><form:select id="slcDoctor" path="doctor"> 
+                           <form:option label="SELECT" value="${null}"/>
+                   <form:options items="${doctors}" itemValue="id" itemLabel="id" />
+                   </form:select></td>
                 </tr>
                 <tr>
-                   <%-- <td><form:label path="patientId">Patient ID</form:label></td>
-                    <td><form:input path="patientId" value="${appointment.patientId}"/></td>--%>
-                   <td><form:select id="slcPatient" path="patient"> 
-                            <form:option label="SELECT" value="${null}"/></td>
-                    <td> <form:options items="${patients}" itemValue="id" itemLabel="patient" /></td>
-                        </form:select>
+                   <td><form:label path="patient">Patient ID</form:label></td>
+                   <%-- <td><form:input path="patientId" value="${appointment.patientId}"/></td>--%>
+                   <td><form:select id="slcPatient" path="patient.id"> 
+                            <form:option label="SELECT" value="${null}"/>
+                    <form:options items="${patients}" itemValue="id" itemLabel="id" />
+                   </form:select></td>
                    
                 </tr>
                 <tr>

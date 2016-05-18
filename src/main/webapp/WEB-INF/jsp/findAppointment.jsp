@@ -31,6 +31,7 @@
                       </td></tr>
                 </table>
             </form:form>--%>
+         
             
             <table id="overview" class="table">
                 <th>AppointmentId</th>
@@ -42,8 +43,8 @@
                     <c:forEach var="appointment" items="${appointments}">
                     <tr>
                         <td><c:url value= '${appointment.id}' /></td>
-                        <td><c:url value= '${appointment.patientId}' /></td>
-                        <td><c:url value= '${appointment.doctorId}' /></td>
+                        <td><c:url value= '${appointment.patient.id}' /></td>
+                        <td><c:url value= '${appointment.doctor.id}' /></td>
                         <td><c:url value= '${appointment.date}' /></td>
                         <td><c:url value= '${appointment.uur}' /></td>
                         <td><c:url value= '${appointment.place}' /></td>

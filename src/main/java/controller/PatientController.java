@@ -5,13 +5,10 @@
  */
 package controller;
 
-import domain.Address;
-import domain.Doctor;
 import domain.Patient;
-import java.util.ArrayList;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,7 +41,7 @@ public class PatientController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String save(@ModelAttribute("patient") Patient patient, BindingResult result) {
+    public String save(@Valid @ModelAttribute("patient") Patient patient, BindingResult result) {
         if(result.hasErrors()){
             return "newPatient";
         }else{

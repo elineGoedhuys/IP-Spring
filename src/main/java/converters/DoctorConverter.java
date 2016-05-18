@@ -21,7 +21,7 @@ public class DoctorConverter implements Converter<String, Doctor>{
     
     @Override
     public Doctor convert(String id) {
-        return service.getDoctorOnId(Integer.valueOf(id));
+        return service.getDoctorOnId(Long.valueOf(id));
     }
     
     

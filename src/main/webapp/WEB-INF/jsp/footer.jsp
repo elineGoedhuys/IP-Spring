@@ -18,6 +18,7 @@
         <p><a  href="?lang=en">English</a></p>
         <p><a  href="?lang=fr">Français</a></p>
         <p><a  href="?lang=nl">Nederlands</a></p>
+        <p><a  href="?lang=ch">華語</a></p>
         </div>
         
     </body>
