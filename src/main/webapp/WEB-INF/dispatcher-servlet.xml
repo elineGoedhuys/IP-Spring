@@ -16,13 +16,13 @@
     <!--<mvc:annotation-driven/>-->
     <mvc:annotation-driven conversion-service="conversionService"/>
     <context:component-scan base-package="controller"/>
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <!--<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
             </props>
         </property>
-    </bean>
+    </bean>-->
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -32,9 +32,9 @@
     <!--
     The index controller.
     -->
-    <bean name="indexController"
+    <!--<bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index" />
+          p:viewName="index" />-->
     
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
