@@ -171,6 +171,17 @@ p a{
     
 }
 
+.rest p{
+     font-size: 20px;
+    font-family: 'Helvetica','Verdana',sans-serif;
+    text-align: left;
+    text-decoration: none;
+    color: #00356B;
+    margin-left: 44%;
+    margin-right: 44%;
+    margin-top: 10%;
+}
+
 select{
      height: 30px; 
     border-radius: 5px; 
