@@ -14,7 +14,9 @@
     <body>
         <%@include file="header.jsp"%>
         <h1><spring:message code="lbl.welcome" /></h1>
-        <p>It is now: <c:out value="${weatherDescription}"/></p>
+        <p><c:forEach var="weather" items="${weatherDescription}">
+            <p> It is now: ${weather.Weather} </p>
+            </c:forEach>
          <%@include file="footer.jsp"%>
     </body>
 </html>

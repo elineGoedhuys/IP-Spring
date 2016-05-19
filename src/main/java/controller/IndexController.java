@@ -33,11 +33,7 @@ public class IndexController {
     
     @RequestMapping(method= RequestMethod.GET)
     public ModelAndView makeAppointment(){
-       //RestTemplate restTemplate = new RestTemplate();
-      //  ObjectMapper jacksonObjectMapper = new ObjectMapper();
-        
-       // LinkedHashMap map= restTemplate.getForObject("http://api.apixu.com/v1/current.json?key=aebe5a3f024040ff9bf112640160705&q=Brussel", LinkedHashMap.class);
-        //Weather weatherDescription = jacksonObjectMapper.convertValue(map.get("current"), Weather.class);
+      
         return new ModelAndView("index","weatherDescription",service.getWeather());
     }
     
