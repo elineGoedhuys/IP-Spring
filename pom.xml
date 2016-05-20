@@ -12,8 +12,8 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-       <!--<glassfish.home>/root/glassfish4-4</glassfish.home>-->
-        <glassfish.home>/Applications/NetBeans/glassfish-4.1.1</glassfish.home>
+       <glassfish.home>/root/glassfish4-4</glassfish.home>
+       <!-- <glassfish.home>/Applications/NetBeans/glassfish-4.1.1</glassfish.home>-->
     </properties>
     
     <dependencies>
