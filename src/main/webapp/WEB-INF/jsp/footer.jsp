@@ -15,11 +15,15 @@
     </head>
     <body>
         <div class="footer">
-        <p><a  href="?lang=en">English</a></p>
-        <p><a  href="?lang=fr">Français</a></p>
-        <p><a  href="?lang=nl">Nederlands</a></p>
-        <p><a  href="?lang=ch">華語</a></p>
+        <ul>
+            <li><a  href="?lang=en">English</a></li>    
+            <li><a  href="?lang=fr">Français</a></li>
+        <li><a  href="?lang=nl">Nederlands</a></li>
+        <li><a  href="?lang=ch">華語</a></li> 
+        </ul>
         </div>
-        
+        <div class="image">
+            <img src="images/LogoElineBlue.png"/>
+        </div> 
     </body>
 </html>
