@@ -35,12 +35,12 @@
     </head>
     <body>
          <%@include file="header.jsp"%>
-        <h1>Make new appointment</h1>
+         <h1><spring:message code="lbl.appointment"/></h1>
         <form:form modelAttribute="makeAppointment" method="POST" action="${pageContext.request.contextPath}/makeAppointment.htm">
             <table>
                 
                 <tr>
-                   <td><form:label path="doctor">Doctor ID</form:label></td>
+                   <td><form:label path="doctor"><spring:message code="lbl.doctorId"/></form:label></td>
                    <%-- <td><form:input path="doctorId" value="${appointment.doctorId}"/></td>--%>
                <td><form:select id="slcDoctor" path="doctor"> 
                            <form:option label="SELECT" value="${null}"/>
@@ -48,7 +48,7 @@
                    </form:select></td>
                 </tr>
                 <tr>
-                   <td><form:label path="patient">Patient ID</form:label></td>
+                   <td><form:label path="patient"><spring:message code="lbl.patientId"/></form:label></td>
                    <%-- <td><form:input path="patientId" value="${appointment.patientId}"/></td>--%>
                    <td><form:select id="slcPatient" path="patient.id"> 
                             <form:option label="SELECT" value="${null}"/>
@@ -57,16 +57,16 @@
                    
                 </tr>
                 <tr>
-                    <td><form:label path="date">Date</form:label></td>
+                    <td><form:label path="date"><spring:message code="lbl.date"/></form:label></td>
                     <td><form:input id="datepicker" path="date" value="${appointment.date}"/></td>
                 </tr>
                 <tr>
-                    <td><form:label path="uur"  >Hour</form:label></td>
+                    <td><form:label path="uur"  ><spring:message code="lbl.hour"/></form:label></td>
                     <td><form:input path="uur" type="time" value="${appointment.uur}"/></td>
                 </tr>
                 <tr>
-                    <td><form:label path="place">Place</form:label></td>
-                    <td><form:input path="place" value="${appointment.place}"/></td>
+                    <td><form:label path="place"><spring:message code="lbl.place"/></form:label></td>
+                    <td><form:input  path="place" value="${appointment.place}"/></td>
                 </tr>
                  <tr>
                     <td class="save" colspan="2">

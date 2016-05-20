@@ -17,7 +17,7 @@
     </head>
     <body>
         <%@include file="header.jsp"%>
-        <h1>Find Patients appointment</h1>
+        <h1><spring:message code="lbl.findAppointment1"/></h1>
         <div id ="container">
              
             <%--<form:form modelAttribute="appointment" method="POST" action= "${pageContext.request.contextPath}/findAppointment.htm">
@@ -34,12 +34,12 @@
          
             
             <table id="overview" class="table">
-                <th>AppointmentId</th>
-                <th>PatientId</th>
-                <th>DoctorId</th>
-                <th>Date</th>
-                <th>Hour</th>
-                <th>Place</th>
+                <th><spring:message code="lbl.appointmentId"/></th>
+                <th><spring:message code="lbl.patientId"/></th>
+                <th><spring:message code="lbl.doctorId"/></th>
+                <th><spring:message code="lbl.date"/></th>
+                <th><spring:message code="lbl.hour"/></th>
+                <th><spring:message code="lbl.place"/></th>
                     <c:forEach var="appointment" items="${appointments}">
                     <tr>
                         <td><c:url value= '${appointment.id}' /></td>
