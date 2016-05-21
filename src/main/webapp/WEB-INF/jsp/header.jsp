@@ -26,6 +26,7 @@
         <li><a href="<c:url value="/doctors.htm" />"><spring:message code="lbl.doctors" /> </a></li>
         <li><a href="<c:url value="/makeAppointment.htm" />"><spring:message code="lbl.makeAppointment" /> </a></li>
         <li><a href="<c:url value="/findAppointment.htm" />"><spring:message code="lbl.findAppointment" /> </a></li>
+        <li><a href="<c:url value="/makeAgenda.htm" />">Agenda </a></li>
     </ul>
 </nav>
     </body>

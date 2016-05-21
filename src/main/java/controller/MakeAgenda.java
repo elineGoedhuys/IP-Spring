@@ -6,10 +6,13 @@
 package controller;
 
 
+import domain.Agenda;
 import domain.Appointment1;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,29 +25,33 @@ import service.DatabaseFacade;
  * @author Eline
  */
 @Controller
-@RequestMapping(value="/makeAppointment")
-public class makeAppointment {
+@RequestMapping(value="/makeAgenda")
+public class MakeAgenda {
     
     @Autowired
     private DatabaseFacade service;
     
-    
-   
-    
+  
     @RequestMapping(method= RequestMethod.GET)
     public ModelAndView makeAppointment(){
-        ModelAndView modelAndView = new ModelAndView ("makeAppointment","makeAppointment",new Appointment1());
-        modelAndView.addObject("patients", service.getPatients());
-        modelAndView.addObject("doctors", service.getDoctors());
-        return modelAndView;
+        ModelAndView modelandview = new ModelAndView("makeAgenda", "appointment", new Agenda());
+        modelandview.addObject("doctors", service.getDoctors());
+        return modelandview;
+        
     }
     
+
+ 
+    
      @RequestMapping(method= RequestMethod.POST)
-    public String save(@ModelAttribute("makeAppointment") @Valid Appointment1 appointment, BindingResult result){
+     public String save(Model model, @ModelAttribute("appointment") @Valid Agenda agenda, BindingResult result){
         if(result.hasErrors()){
-            return "makeAppointment";
+            return "makeAgenda";
         }
-        service.makeAppointment(appointment);
-        return "confirmApp";
+        List<Appointment1> results = service.makeAgenda(agenda.getDoctor(),agenda.getDate());
+        model.addAttribute("results", results);
+        model.addAttribute("appointment", agenda);
+        return "Agenda";
     }
+    
 }

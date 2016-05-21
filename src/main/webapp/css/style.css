@@ -227,3 +227,22 @@ select{
     height: 10%;
     margin: 3% 45%;
 }
+
+.rest h1{
+    font-size: 20px;
+}
+
+.rest{
+    border:solid;
+    border-color: #C5EAF9;
+    border-radius: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+}
+
+#today{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+}
