@@ -41,7 +41,7 @@ public class DoctorController {
     }
     
      @RequestMapping(method= RequestMethod.POST)
-    public String save(@ModelAttribute ("doctor") Doctor doctor, BindingResult result){
+    public String save(@ModelAttribute ("doctor") @Valid Doctor doctor, BindingResult result){
         if(result.hasErrors()){
             return "newDoctor";
         }else{

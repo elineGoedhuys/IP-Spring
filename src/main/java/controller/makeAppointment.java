@@ -7,8 +7,10 @@ package controller;
 
 
 import domain.Appointment1;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,8 +40,11 @@ public class makeAppointment {
     }
     
      @RequestMapping(method= RequestMethod.POST)
-    public String save(@ModelAttribute("makeAppointment") Appointment1 appointment){
+    public String save(@ModelAttribute("makeAppointment") @Valid Appointment1 appointment, BindingResult result){
+        if(result.hasErrors()){
+            return "makeAppointment";
+        }
         service.makeAppointment(appointment);
-        return "redirect:/makeAppointment.htm";
+        return "redirect:/confirmApp.htm";
     }
 }

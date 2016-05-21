@@ -22,13 +22,16 @@
         <script type="text/javascript" src="js/bootstrap-timepicker.min.js"></script>
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="wickedpicker.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        
   
   <script>
-  $(document).ready(function() {
-    $("#datepicker").datepicker();
-  });
- 
-  </script>
+         $(function() {
+            $( "#datepicker-13" ).datepicker();
+            //$( "#datepicker-13" ).datepicker("show");
+         });
+      </script>
   
  
         
@@ -46,6 +49,7 @@
                            <form:option label="SELECT" value="${null}"/>
                    <form:options items="${doctors}" itemValue="id" itemLabel="lastName" />
                    </form:select></td>
+               <td><form:errors path="doctor"/></td>
                 </tr>
                 <tr>
                    <td><form:label path="patient"><spring:message code="lbl.patientId"/></form:label></td>
@@ -54,19 +58,23 @@
                             <form:option label="SELECT" value="${null}"/>
                     <form:options items="${patients}" itemValue="id" itemLabel="lastName" />
                    </form:select></td>
+                   <td><form:errors path="patient"/></td>
                    
                 </tr>
                 <tr>
                     <td><form:label path="date"><spring:message code="lbl.date"/></form:label></td>
-                    <td><form:input id="datepicker" path="date" value="${appointment.date}"/></td>
+                    <td><form:input id="datepicker-13" path="date" value="${appointment.date}"/></td>
+                    <td><form:errors path="date"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="uur"  ><spring:message code="lbl.hour"/></form:label></td>
                     <td><form:input path="uur" type="time" value="${appointment.uur}"/></td>
+                    <td><form:errors path="uur"/></td>
                 </tr>
                 <tr>
                     <td><form:label path="place"><spring:message code="lbl.place"/></form:label></td>
                     <td><form:input  path="place" value="${appointment.place}"/></td>
+                    <td><form:errors path="place"/></td>
                 </tr>
                  <tr>
                     <td class="save" colspan="2">
