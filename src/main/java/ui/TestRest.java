@@ -18,9 +18,9 @@ import service.DatabaseFacade;
  */
 public class TestRest {
     public static void main(String[] args){
-        DatabaseFacade service = new DatabaseFacade();
+       // DatabaseFacade service = new DatabaseFacade();
        
-        System.out.println(service.getWeather());
+      //  System.out.println(service.getWeather());
     }
 }
 
