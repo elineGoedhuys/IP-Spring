@@ -13,23 +13,13 @@
     </head>
     <body>
          <%@include file="header.jsp"%>
-        <h1>You're agenda for today</h1>
+   
         <div id ="container">
              
-            <%--<form:form modelAttribute="appointment" method="POST" action= "${pageContext.request.contextPath}/findAppointment.htm">
-                <table>
-                <tr>
-                    <td> <form:label path="patientId">PatientId: </form:label></td>
-                    <td>  <form:input path="patientId" value="${appointment.patientId}"></form:input></td>
-                </tr>
-                <tr><td class="save" colspan="2">
-                         <input type="submit" value="Save"/>
-                      </td></tr>
-                </table>
-            </form:form>--%>
          
             
             <table id="overview" class="table">
+               
                 <th><spring:message code="lbl.hour"/></th>
                 <th><spring:message code="lbl.firstName"/></th>
                 <th><spring:message code="lbl.lastName"/></th>
@@ -40,6 +30,7 @@
                 
                 
                     <c:forEach var="agenda" items="${results}">
+                        <h1>You're agenda for <c:url value='${agenda.date}'/></h1>
                     <tr>
                         <td><c:url value= '${agenda.uur}' /></td>
                         <td><c:url value= '${agenda.patient.firstName}' /></td>  
